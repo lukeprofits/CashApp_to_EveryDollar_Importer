@@ -7,7 +7,9 @@ Automatically import your transactions from Cash App to EveryDollar
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 <p align="center">
-  <br><img src="Example.jpg" alt="Cash App To EveryDollar Importer"><br>
+  <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/OaUM6aWf43E?si=RhWC-i3hGlNi8r7X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <br>
 </p>
 
 A bulk-importer from [Cash App](https://cash.app/) to [EveryDollar](https://www.everydollar.com/app/budget). 
