@@ -30,7 +30,7 @@ I created this, because there is no official way to do it, and I was sick of doi
 * Manual import (review each transaction that is being added, and press "ENTER" to confirm)
 
 # Donate
-I created this for free. If this helps you out, send me a few bucks (I KNOW you have Cash App :P)
+I created this for free. If this helps you out, send me a few bucks (I KNOW you have Cash App 😛)
 
 Cash App: `$LukeProfits`
 
