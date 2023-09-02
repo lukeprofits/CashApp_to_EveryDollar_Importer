@@ -1,0 +1,3 @@
+python-dateutil
+selenium
+undetected-chromedriver
