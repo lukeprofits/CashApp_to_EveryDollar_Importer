@@ -1,4 +1,4 @@
-# Cashapp to EveryDollar Importer
+# Cash App To EveryDollar Importer
 Automatically import your transactions from Cash App to EveryDollar 
 
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows-blueviolet.svg)
