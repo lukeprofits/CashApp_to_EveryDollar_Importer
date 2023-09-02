@@ -6,7 +6,7 @@ Automatically import your transactions from Cash App to EveryDollar
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8+-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-[![Watch the video](https://user-images.githubusercontent.com/6053155/173631669-1d1b14ad-c478-4010-b57d-d79592a789f2.png)](https://www.youtube.com/watch?v=OaUM6aWf43E)
+[![Watch the video](image.jpg)](https://www.youtube.com/watch?v=OaUM6aWf43E)
 
 
 A bulk-importer from [Cash App](https://cash.app/) to [EveryDollar](https://www.everydollar.com/app/budget). 
