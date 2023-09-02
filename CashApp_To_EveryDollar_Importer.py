@@ -53,6 +53,11 @@ def write_to_csv(file_path, list):
     #print(f'Saved to {file_path}')
 
 
+def clean_string(string):
+    approved_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?:;-_()[]{}<>&@#$%^*+=|/ "
+    return ''.join(c for c in string if c in approved_chars)
+
+
 def cashapp_export_to_list_of_dict(input_file, start_date, end_date):
     # Timezone information dictionary for dateutil
     tzinfos = {
@@ -94,8 +99,9 @@ def cashapp_export_to_list_of_dict(input_file, start_date, end_date):
                 direction = "In" if "PAYMENT DEPOSITED" in row.get("Status", "") or "CARD REFUNDED" in row.get("Status", "") else "Out"
                 amount = row.get("Amount", "").replace("$", "").replace("-", "")
                 note = f"{row.get('Status', '')} {row.get('Name of sender/receiver', '')} with note {row.get('Notes', '')}".strip()
+                note = clean_string(string=note)
                 merchant = row.get('Notes', '')
-
+                merchant = clean_string(string=merchant)
                 tx = {
                     "id": row.get("Transaction ID", ""),
                     "direction": direction,
