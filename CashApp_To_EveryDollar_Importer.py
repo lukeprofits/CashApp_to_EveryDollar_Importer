@@ -249,7 +249,7 @@ if user_entered == 1:
         cleaned_data = cashapp_export_to_list_of_dict(input_file=input_file_from_cashapp, start_date=start_date, end_date=end_date)
         print(cleaned_data)
         for transaction in cleaned_data:
-            write_to_csv(file_path='CashApp_Output.csv', list=[json.dumps(transaction)])
+            write_to_csv(file_path=transactions_file, list=[json.dumps(transaction)])
         print('\n [ Import Spreadsheet Created! ] ')
         print('Now re-launch the program and run either 2 (for manual review), or 3 (for automatic import)')
         input('')
