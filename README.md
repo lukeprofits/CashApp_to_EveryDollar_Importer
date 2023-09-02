@@ -8,7 +8,7 @@ Automatically import your transactions from Cash App to EveryDollar
 
 <p align="center">
   <br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/OaUM6aWf43E?si=RhWC-i3hGlNi8r7X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  [![Watch the video](Example.jpg)](https://www.youtube.com/watch?v=OaUM6aWf43E)
   <br>
 </p>
 
