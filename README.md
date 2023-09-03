@@ -12,7 +12,17 @@ A bulk-importer from [Cash App](https://cash.app/) to [EveryDollar](https://www.
 
 I created this, because there is no official way to do it, and I was sick of doing it manually. 
 
-(P.S. Hire me Dave Ramsey -- I'll add this functionality directly to your site!)
+(P.S. Hire me Dave Ramsey -- I'll add this functionality directly to your site.)
+
+
+# Donate
+I created this for free. If it helps you out, send me a few bucks (I KNOW you have Cash App 😛)
+
+Cash App: `$LukeProfits`
+
+...or if you use crypto, you can send me some Monero (XMR). 
+
+XMR: `4At3X5rvVypTofgmueN9s9QtrzdRe5BueFrskAZi17BoYbhzysozzoMFB6zWnTKdGC6AxEAbEE5czFR3hbEEJbsm4hCeX2S`
 
 
 # How To Use
@@ -26,15 +36,6 @@ I created this, because there is no official way to do it, and I was sick of doi
 # Features
 * Automatic import
 * Manual import (review each transaction that is being added, and press "ENTER" to confirm)
-
-# Donate
-I created this for free. If this helps you out, send me a few bucks (I KNOW you have Cash App 😛)
-
-Cash App: `$LukeProfits`
-
-...or if you use crypto, you can send me some Monero (XMR). 
-
-XMR: `4At3X5rvVypTofgmueN9s9QtrzdRe5BueFrskAZi17BoYbhzysozzoMFB6zWnTKdGC6AxEAbEE5czFR3hbEEJbsm4hCeX2S`
 
 
 ## Legal Disclaimer
