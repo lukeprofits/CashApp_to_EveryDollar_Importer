@@ -20,9 +20,14 @@ I created this for free. If it helps you out, send me a few bucks (I KNOW you ha
 
 Cash App: `$LukeProfits`
 
-...or if you use crypto, you can send me some Monero (XMR). 
+<a href="https://www.buymeacoffee.com/lukeprofits" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+</a>
 
-XMR: `4At3X5rvVypTofgmueN9s9QtrzdRe5BueFrskAZi17BoYbhzysozzoMFB6zWnTKdGC6AxEAbEE5czFR3hbEEJbsm4hCeX2S`
+...or if you use crypto, you can send me some Monero (XMR) or Bitcoin. 
+
+- XMR: `4At3X5rvVypTofgmueN9s9QtrzdRe5BueFrskAZi17BoYbhzysozzoMFB6zWnTKdGC6AxEAbEE5czFR3hbEEJbsm4hCeX2S`
+- BTC: `1ACCQMwHYUkA1v449DvQ9t6dm3yv1enN87`
 
 
 # How To Use
