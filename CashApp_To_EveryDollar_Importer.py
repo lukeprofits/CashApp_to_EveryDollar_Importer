@@ -96,12 +96,30 @@ def cashapp_export_to_list_of_dict(input_file, start_date, end_date):
             row_date = parse(date_str, tzinfos=tzinfos).astimezone(timezone)
 
             if start_date <= row_date <= end_date:
-                direction = "In" if "PAYMENT DEPOSITED" in row.get("Status", "") or "CARD REFUNDED" in row.get("Status", "") else "Out"
-                amount = row.get("Amount", "").replace("$", "").replace("-", "")
-                note = f"{row.get('Status', '')} {row.get('Name of sender/receiver', '')} with note {row.get('Notes', '')}".strip()
+                direction = "Out" if '-' in row.get("Net Amount", "") else "In"
+                amount = row.get("Net Amount", "").replace("$", "").replace("-", "")
+
+                note = f"{row.get('Status', '')} {row.get('Name of sender/receiver', '')} with note {row.get('Notes', '') if row.get('Notes', '') else 'NONE'}".strip()
                 note = clean_string(string=note)
-                merchant = row.get('Notes', '')
+
+                # Recieving from a friend
+                if 'PAYMENT DEPOSITED' in row.get('Status', '') and row.get('Name of sender/receiver', ''):
+                    merchant = row.get('Name of sender/receiver', '')
+
+                # Sending money to a friend
+                elif 'Sent P2P' in row.get('Transaction Type', '') and row.get('Name of sender/receiver'):
+                    merchant = row.get('Name of sender/receiver')
+
+                # Transfer to other bank account
+                elif 'Cash out' in row.get('Transaction Type', '') and 'TRANSFER SENT' in row.get('Status', ''):
+                    merchant = 'Transfer To Bank'
+
+                # Everything Else
+                else:
+                    merchant = row.get('Notes', '')
+
                 merchant = clean_string(string=merchant)
+
                 tx = {
                     "id": row.get("Transaction ID", ""),
                     "direction": direction,
