@@ -10,14 +10,14 @@ Automatically import your transactions from Cash App to EveryDollar
   <br><img src="example.jpg" alt="Cash App To Every Dollar Importer"><br>
 </p>
 
-<a href="https://www.youtube.com/watch?v=OaUM6aWf43E" target="_blank"><img src="thumbnail.jpg" alt="Watch the video"></a>
-
 Bulk-import from [Cash App](https://cash.app/) to [EveryDollar](https://www.everydollar.com/app/budget). 
 
 I created this, because there is no official way to do it, and I was tired of doing it manually. 
 
 (P.S. Hire me Dave Ramsey -- I'll add this functionality directly to EveryDollar.)
 
+# How To Use
+<a href="https://www.youtube.com/watch?v=OaUM6aWf43E" target="_blank"><img src="thumbnail.jpg" alt="Watch the video"></a>
 
 # Donate
 I created this for free. If it helps you out, send me a few bucks (I KNOW you have Cash App 😛)
