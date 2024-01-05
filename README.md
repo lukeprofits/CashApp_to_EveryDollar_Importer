@@ -10,7 +10,7 @@ Automatically import your transactions from Cash App to EveryDollar
 </p>
 
 
-# About
+# About:
 Bulk-import from [Cash App](https://cash.app/) to [EveryDollar](https://www.everydollar.com/app/budget). 
 
 I created this, because there is no official way to do it, and I was tired of doing it manually. 
@@ -18,7 +18,7 @@ I created this, because there is no official way to do it, and I was tired of do
 (P.S. Hire me Dave Ramsey -- I'll add this functionality directly to EveryDollar.)
 
 
-# How To Use
+# How To Use:
 <a href="https://www.youtube.com/watch?v=OaUM6aWf43E" target="_blank"><img src="thumbnail.jpg" alt="Watch the video"></a>
 
 * Step 1. Make sure you have [Python 3.8](https://www.python.org/downloads/) or newer installed.
@@ -27,12 +27,12 @@ I created this, because there is no official way to do it, and I was tired of do
 * Step 3. Run the program by double clicking `Windows_Launcher.bat` or from the commandline with `python CashApp_to_EveryDollar_Importer.py`
 * Step 4. Follow the prompts. 
 
-# Features
+# Features:
 * Automatic import
 * Manual import (review each transaction that is being added, and press "ENTER" to confirm)
 
 
-# Donate
+# Donate:
 I created this for free. If it helps you out, send me a few bucks (I KNOW you have Cash App 😛)
 
 Cash App: `$LukeProfits`
