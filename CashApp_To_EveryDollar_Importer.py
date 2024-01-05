@@ -4,28 +4,85 @@ import json
 import time
 import shutil
 import dateutil.tz
-from datetime import datetime
 from dateutil.parser import parse
 
 # SELENIUM
 from selenium import webdriver
 import undetected_chromedriver  #as uc
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 
+import config as cfg
 
-# VARIABLES ############################################################################################################
-input_file_from_cashapp = "cash_app_report.csv"
-transactions_file = 'import_spreadsheet_of_transactions.csv'
-site_link = 'https://www.everydollar.com/app/budget'
 
-headless = False
-user_agent = None
-selenium_temp_dir = os.path.join(os.getcwd(), 'temp')
-proxy = None
+# Option Functions #####################################################################################################
+def create_import_spreadsheet(start="2023-11-1", end="2023-11-30"):
+    if __name__ == "__main__":
+        start_date = input('Enter the START DATE in this format (year-month-day), for example: 2023-8-1\n').strip()
+        end_date = input('Enter the END DATE in this format (year-month-day), for example: 2023-8-31\n').strip()
+    else:
+        start_date = start
+        end_date = end
+
+    print('Extracting transactions...')
+    try:
+        cleaned_data = cashapp_export_to_list_of_dict(input_file=cfg.input_file_from_cashapp, start_date=start_date,
+                                                      end_date=end_date)
+        print(cleaned_data)
+        for transaction in cleaned_data:
+            write_to_csv(file_path=cfg.transactions_file, list=[json.dumps(transaction)])
+        print('\n [ Import Spreadsheet Created! ] ')
+        if __name__ == "__main__":
+            print('Now re-launch the program and run either 2 (for manual review), or 3 (for automatic import)')
+            input('')
+    except:
+        os.system('cls')
+        print('Input file from Cash App not found! Please relaunch the program and read the instructions more closely.')
+        input('')
+
+
+def import_manually():
+    cfg.manual_mode = True
+
+    driver = setup_driver()
+    driver.get(cfg.site_link)
+    if __name__ == "__main__":
+        input('Sign into EveryDollar, then press ENTER in this window to continue.')
+    else:
+        while not cfg.start_importing:
+            pass
+    print('Preparing to import transactions...')
+    import_transactions(driver=driver, auto=False)
+    quit_driver(driver=driver)
+    print('\n [ All Transactions Imported! ] ')
+    print("Don't forget to delete the spreadsheets we used, so they don't mess up your import next time.")
+    if __name__ == "__main__":
+        input('')
+    else:
+        cfg.goto_done()
+
+
+def import_automatically():
+    driver = setup_driver()
+    driver.get(cfg.site_link)
+    if __name__ == "__main__":
+        input('Sign into EveryDollar, then press ENTER in this window to continue.')
+    else:
+        while not cfg.start_importing:
+            pass
+        print('passinggggg')
+    print('Preparing to import transactions...')
+    import_transactions(driver=driver, auto=True)
+    quit_driver(driver=driver)
+    print('\n [ All Transactions Imported! ] ')
+    print("Don't forget to delete the spreadsheets we used, so they don't mess up your import next time.")
+    if __name__ == "__main__":
+        input('')
+    else:
+        cfg.goto_done()
+
 
 # Functions ############################################################################################################
 def show_logo():
@@ -140,20 +197,22 @@ def set_chrome_options(user_agent=None, proxy=None):
     options.add_argument("--disable-notifications")
     options.add_argument("--disable-popup-blocking")
     options.add_argument("--disable-save-password-bubble")
-    options.add_argument(f"--user-data-dir={selenium_temp_dir}")  # Set custom user data directory
-    if headless:
+    options.add_argument(f"--user-data-dir={cfg.selenium_temp_dir}")  # Set custom user data directory
+    if cfg.headless:
         options.add_argument("--headless=new")
-    if user_agent:
-        options.add_argument(f'user-agent={user_agent}')
-    if proxy:
-        options.add_argument(f'proxy-server={proxy}')
+    if cfg.user_agent:
+        options.add_argument(f'user-agent={cfg.user_agent}')
+    if cfg.proxy:
+        options.add_argument(f'proxy-server={cfg.proxy}')
     return options
 
 
 def setup_driver(user_agent=None, proxy=None):
-    options = set_chrome_options(user_agent, proxy)
+    print("Setting up chromedriver...")
+    options = set_chrome_options(cfg.user_agent, cfg.proxy)
     driver = undetected_chromedriver.Chrome(options=options)
     driver.set_page_load_timeout(60)  # wait 60 second before error
+    print("Done!")
     return driver
 
 
@@ -161,7 +220,7 @@ def quit_driver(driver):
     try:
         if driver is not None:
             driver.quit()
-            shutil.rmtree(selenium_temp_dir, ignore_errors=True)  # Delete the temporary directory
+            shutil.rmtree(cfg.selenium_temp_dir, ignore_errors=True)  # Delete the temporary directory
     except:
         pass
 
@@ -182,7 +241,7 @@ def import_transactions(driver, auto=False):
     note_xpath = '//textarea[@name="note"]'
     submit_button_xpath = '//button[@type="submit"]'
 
-    with open(file=transactions_file, mode='r', encoding='utf-8') as f:
+    with open(file=cfg.transactions_file, mode='r', encoding='utf-8') as f:
         reader = csv.reader(f)
         for row in reader:
             data = json.loads(row[0])
@@ -232,7 +291,18 @@ def import_transactions(driver, auto=False):
             # Note
             driver.find_element(By.XPATH, note_xpath).send_keys(note)
 
-            input('To submit this transaction, press ENTER.') if not auto else None
+            if not auto:
+                if __name__ == "__main__":
+                    input('To submit this transaction, press ENTER.')
+                else:
+                    while cfg.last_click_count == cfg.current_click_count:
+                        pass  # wait until they click the button
+
+                    cfg.last_click_count = cfg.current_click_count
+
+            else:
+                pass
+
             print('Submitting...')
 
             # Submit
@@ -241,69 +311,42 @@ def import_transactions(driver, auto=False):
 
 
 # PROGRAM STARTS #######################################################################################################
-show_logo()
 
-print('What would you like to do?\n')
-print('( 1. ) - CREATE import spreadsheet of transactions from Cash App.')
-print('( 2. ) - Manually review & add transactions to EveryDollar FROM import spreadsheet.')
-print('( 3. ) - Automatically add transactions to EveryDollar FROM import spreadsheet.')
-print('\n')
+if __name__ == "__main__":
+    show_logo()
 
-user_entered = ''
-while True:
-    try:
-        user_entered = int(input('Type either 1, 2, or 3 and then press enter: '))
-        if user_entered > 0 or user_entered < 4:
-            break
-    except:
-        pass
-    print('Invalid entry. Enter either 1, 2, or 3.')
+    print('What would you like to do?\n')
+    print('( 1. ) - CREATE import spreadsheet of transactions from Cash App.')
+    print('( 2. ) - Manually review & add transactions to EveryDollar FROM import spreadsheet.')
+    print('( 3. ) - Automatically add transactions to EveryDollar FROM import spreadsheet.')
+    print('\n')
 
-print('\n')
-if user_entered == 1:
-    os.system('cls')
-    print("Tip: Don't forget to delete the spreadsheets from the last time you ran this software.\n")
-    print('Step 1. Sign into Cash App and click the download button to download a spreadsheet of all your transactions.\n')
-    print(f'Step 2. Put this spreadsheet called "{input_file_from_cashapp}" in the same folder that this program was run from.\n')
-    input('Step 3: After completing steps 1 and 2, press enter. You will be prompted to enter a start and end date.\n\n\n')
-    start_date = input('Enter the START DATE in this format (year-month-day), for example: 2023-8-1\n').strip()
-    end_date = input('Enter the END DATE in this format (year-month-day), for example: 2023-8-31\n').strip()
-    print('Extracting transactions...')
-    try:
-        cleaned_data = cashapp_export_to_list_of_dict(input_file=input_file_from_cashapp, start_date=start_date, end_date=end_date)
-        print(cleaned_data)
-        for transaction in cleaned_data:
-            write_to_csv(file_path=transactions_file, list=[json.dumps(transaction)])
-        print('\n [ Import Spreadsheet Created! ] ')
-        print('Now re-launch the program and run either 2 (for manual review), or 3 (for automatic import)')
-        input('')
-    except:
+    user_entered = ''
+
+    while True:
+        try:
+            user_entered = int(input('Type either 1, 2, or 3 and then press enter: '))
+            if user_entered > 0 or user_entered < 4:
+                break
+        except:
+            pass
+        print('Invalid entry. Enter either 1, 2, or 3.')
+
+    print('\n')
+    if user_entered == 1:
         os.system('cls')
-        print('Input file from Cash App not found! Please relaunch the program and read the instructions more closely.')
-        input('')
+        print("Tip: Don't forget to delete the spreadsheets from the last time you ran this software.\n")
+        print('Step 1. Sign into Cash App and click the download button to download a spreadsheet of all your transactions.\n')
+        print(f'Step 2. Put this spreadsheet called "{cfg.input_file_from_cashapp}" in the same folder that this program was run from.\n')
+        input('Step 3: After completing steps 1 and 2, press enter. You will be prompted to enter a start and end date.\n\n\n')
+        create_import_spreadsheet()
 
-elif user_entered == 2:
-    os.system('cls')
-    print('Launching browser...\n')
-    driver = setup_driver()
-    driver.get(site_link)
-    input('Sign into EveryDollar, then press ENTER in this window to continue.')
-    print('Preparing to import transactions...')
-    import_transactions(driver=driver, auto=False)
-    quit_driver(driver=driver)
-    print('\n [ All Transactions Imported! ] ')
-    print("Don't forget to delete the spreadsheets we used, so they don't mess up your import next time.")
-    input('')
+    elif user_entered == 2:
+        os.system('cls')
+        print('Launching browser...\n')
+        import_manually()
 
-elif user_entered == 3:
-    os.system('cls')
-    print('Launching browser...\n')
-    driver = setup_driver()
-    driver.get(site_link)
-    input('Sign into EveryDollar, then press ENTER in this window to continue.')
-    print('Preparing to import transactions...')
-    import_transactions(driver=driver, auto=True)
-    quit_driver(driver=driver)
-    print('\n [ All Transactions Imported! ] ')
-    print("Don't forget to delete the spreadsheets we used, so they don't mess up your import next time.")
-    input('')
+    elif user_entered == 3:
+        os.system('cls')
+        print('Launching browser...\n')
+        import_automatically()

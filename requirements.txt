@@ -1,3 +1,6 @@
+tkcalendar
+customtkinter
 python-dateutil
 selenium
 undetected-chromedriver
+setuptools
