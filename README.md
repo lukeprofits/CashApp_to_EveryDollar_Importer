@@ -1,11 +1,10 @@
 # Cash App To EveryDollar Importer
-Automatically import your transactions from Cash App to EveryDollar 
-
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Windows-blueviolet.svg)
 ![Version 1.0.0](https://img.shields.io/badge/Version-1.0.0-blue.svg)
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8+-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+Automatically import your transactions from Cash App to EveryDollar 
 <p align="center">
   <br><img src="example.jpg" alt="Cash App To Every Dollar Importer"><br>
 </p>
