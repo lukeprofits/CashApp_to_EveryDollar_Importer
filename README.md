@@ -29,7 +29,7 @@ I created this, because there is no official way to do it, and I was tired of do
 
 # Features:
 * Automatic import
-* Manual import (review each transaction that is being added, and press "ENTER" to confirm)
+* Manual import (review each transaction that is being added, and click to confirm)
 
 
 # Donate:
