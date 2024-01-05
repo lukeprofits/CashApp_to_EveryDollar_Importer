@@ -16,9 +16,6 @@ I created this, because there is no official way to do it, and I was tired of do
 
 (P.S. Hire me Dave Ramsey -- I'll add this functionality directly to EveryDollar.)
 
-# How To Use
-<a href="https://www.youtube.com/watch?v=OaUM6aWf43E" target="_blank"><img src="thumbnail.jpg" alt="Watch the video"></a>
-
 # Donate
 I created this for free. If it helps you out, send me a few bucks (I KNOW you have Cash App 😛)
 
@@ -35,6 +32,7 @@ Cash App: `$LukeProfits`
 
 
 # How To Use
+<a href="https://www.youtube.com/watch?v=OaUM6aWf43E" target="_blank"><img src="thumbnail.jpg" alt="Watch the video"></a>
 
 * Step 1. Make sure you have [Python 3.8](https://www.python.org/downloads/) or newer installed.
 * Step 2. Install [Google Chrome](https://www.google.com/chrome/) (make sure you have the latest version by visiting this link from the chrome browser: `chrome://settings/help`)
