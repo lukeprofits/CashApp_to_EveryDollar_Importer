@@ -9,26 +9,13 @@ Automatically import your transactions from Cash App to EveryDollar
   <img src="example.jpg" alt="Cash App To Every Dollar Importer"><br>
 </p>
 
+
 # About
 Bulk-import from [Cash App](https://cash.app/) to [EveryDollar](https://www.everydollar.com/app/budget). 
 
 I created this, because there is no official way to do it, and I was tired of doing it manually. 
 
 (P.S. Hire me Dave Ramsey -- I'll add this functionality directly to EveryDollar.)
-
-# Donate
-I created this for free. If it helps you out, send me a few bucks (I KNOW you have Cash App 😛)
-
-Cash App: `$LukeProfits`
-
-<a href="https://www.buymeacoffee.com/lukeprofits" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
-</a>
-
-...or if you use crypto, you can send me some Monero (XMR) or Bitcoin. 
-
-- XMR: `4At3X5rvVypTofgmueN9s9QtrzdRe5BueFrskAZi17BoYbhzysozzoMFB6zWnTKdGC6AxEAbEE5czFR3hbEEJbsm4hCeX2S`
-- BTC: `1ACCQMwHYUkA1v449DvQ9t6dm3yv1enN87`
 
 
 # How To Use
@@ -43,6 +30,21 @@ Cash App: `$LukeProfits`
 # Features
 * Automatic import
 * Manual import (review each transaction that is being added, and press "ENTER" to confirm)
+
+
+# Donate
+I created this for free. If it helps you out, send me a few bucks (I KNOW you have Cash App 😛)
+
+Cash App: `$LukeProfits`
+
+<a href="https://www.buymeacoffee.com/lukeprofits" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+</a>
+
+...or if you use crypto, you can send me some Monero (XMR) or Bitcoin. 
+
+- XMR: `4At3X5rvVypTofgmueN9s9QtrzdRe5BueFrskAZi17BoYbhzysozzoMFB6zWnTKdGC6AxEAbEE5czFR3hbEEJbsm4hCeX2S`
+- BTC: `1ACCQMwHYUkA1v449DvQ9t6dm3yv1enN87`
 
 
 ## Legal Disclaimer
