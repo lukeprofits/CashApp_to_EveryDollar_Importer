@@ -19,6 +19,8 @@ I created this, because there is no official way to do it, and I was tired of do
 
 Update: Thanks for hiring me Dave Ramsey!!! 😁
 
+Update 2: I am working on pull request that adds an "Import Transactions" feature to the EveryDollar app. 
+
 
 # How To Use:
 <a href="https://www.youtube.com/watch?v=OaUM6aWf43E" target="_blank"><img src="thumbnail.jpg" alt="Watch the video"></a>
