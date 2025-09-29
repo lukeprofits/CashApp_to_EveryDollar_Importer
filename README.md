@@ -19,7 +19,7 @@ I created this, because there is no official way to do it, and I was tired of do
 
 Update: Thanks for hiring me Dave Ramsey!!! 😁
 
-Update 2: I am working on pull request that adds an "Import Transactions" feature to the EveryDollar app. 
+Update #2: I am working on pull request that adds an "Import Transactions" feature to the EveryDollar app. 
 
 
 # How To Use:
